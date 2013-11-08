@@ -196,6 +196,7 @@ static NSSet* org_apache_cordova_validArrowDirections;
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     if([navigationController isKindOfClass:[UIImagePickerController class]]){
         UIImagePickerController * cameraPicker = (UIImagePickerController*)navigationController;
         
@@ -324,7 +325,7 @@ static NSSet* org_apache_cordova_validArrowDirections;
                     NSMutableDictionary *EXIFDictionary = [[controllerMetadata objectForKey:(NSString *)kCGImagePropertyExifDictionary]mutableCopy];
                     if (EXIFDictionary)	[self.metadata setObject:EXIFDictionary forKey:(NSString *)kCGImagePropertyExifDictionary];
                     
-                    [[self locationManager] startUpdatingLocation];
+                    //[[self locationManager] startUpdatingLocation];
                     return;
                 }
             }
