@@ -325,7 +325,7 @@ static NSSet* org_apache_cordova_validArrowDirections;
                     NSMutableDictionary *EXIFDictionary = [[controllerMetadata objectForKey:(NSString *)kCGImagePropertyExifDictionary]mutableCopy];
                     if (EXIFDictionary)	[self.metadata setObject:EXIFDictionary forKey:(NSString *)kCGImagePropertyExifDictionary];
                     
-                    //[[self locationManager] startUpdatingLocation];
+                    [[self locationManager] startUpdatingLocation];
                     return;
                 }
             }
